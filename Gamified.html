@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Estudo Gamificado</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <div class="exp-bar">
+            <span>XP: <span id="xp-value">0%</span></span>
+        </div>
+        <button id="pomodoro-btn">Iniciar Pomodoro</button>
+    </div>
+
+    <div class="level">
+        <h2>Nível 1</h2>
+        <ul id="task-list">
+            <li><input type="checkbox" class="task"> Estudar Matemática</li>
+            <li><input type="checkbox" class="task"> Estudar Física</li>
+            <li><input type="checkbox" class="task"> Estudar Química</li>
+        </ul>
+        <div class="chest">
+            <button id="chest-button" disabled>Baú Bloqueado</button>
+        </div>
+    </div>
+
+    <div id="pomodoro-timer" class="pomodoro-timer hidden">
+        <h3>Temporizador Pomodoro</h3>
+        <div class="timer">
+            <span id="timer-display">25:00</span>
+        </div>
+        <div class="slots">
+            <div class="slot" id="slot-1"></div>
+            <div class="slot" id="slot-2"></div>
+            <div class="slot" id="slot-3"></div>
+            <div class="slot" id="slot-4"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
