@@ -1,43 +1,51 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site de Estudo Gamificado</title>
+    <title>Interactive Study Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="header">
-        <div class="exp-bar">
-            <span>XP: <span id="xp-value">0%</span></span>
+    <!-- Setup Page -->
+    <div id="setup-page">
+        <h1>Setup Your Game</h1>
+        <input id="game-title" type="text" placeholder="Enter Game Title">
+        
+        <div id="level-setup">
+            <h2>Level 1</h2>
+            <textarea class="tasks-input" placeholder="Enter tasks for Level 1 (one per line)"></textarea>
+            <textarea class="chest-input" placeholder="Enter chest links for Level 1 (one per line)"></textarea>
         </div>
-        <button id="pomodoro-btn">Iniciar Pomodoro</button>
+        
+        <button id="add-level-btn">Add Another Level</button>
+        <button id="start-game-btn">Start Game</button>
     </div>
 
-    <div class="level">
-        <h2>Nível 1</h2>
-        <ul id="task-list">
-            <li><input type="checkbox" class="task"> Estudar Matemática</li>
-            <li><input type="checkbox" class="task"> Estudar Física</li>
-            <li><input type="checkbox" class="task"> Estudar Química</li>
-        </ul>
-        <div class="chest">
-            <button id="chest-button" disabled>Baú Bloqueado</button>
-        </div>
+    <!-- Main Game Page -->
+    <div id="game-page" class="hidden">
+        <header class="header">
+            <span id="game-title-display"></span>
+            <span class="exp-bar"><b>XP:</b> <span>0%</span></span>
+            <button id="pomodoro-btn">Pomodoro Timer</button>
+            <button id="restart-btn">Restart</button>
+        </header>
+        <div id="levels-container"></div>
     </div>
 
-    <div id="pomodoro-timer" class="pomodoro-timer hidden">
-        <h3>Temporizador Pomodoro</h3>
-        <div class="timer">
-            <span id="timer-display">25:00</span>
-        </div>
+    <!-- Pomodoro Timer -->
+    <div id="pomodoro-timer" class="hidden">
+        <div class="timer">25:00</div>
         <div class="slots">
-            <div class="slot" id="slot-1"></div>
-            <div class="slot" id="slot-2"></div>
-            <div class="slot" id="slot-3"></div>
-            <div class="slot" id="slot-4"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
+            <div class="slot"></div>
         </div>
+        <button id="close-timer">Close</button>
     </div>
+    
 
     <script src="script.js"></script>
 </body>
